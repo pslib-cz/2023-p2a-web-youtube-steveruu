@@ -1,0 +1,161 @@
+@layer reset, init, style, design;
+
+@import url(normalize.css) layer(reset);
+@import url(style.css) layer(flex);
+
+@layer reset {
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+    :root {
+        --silver: #F2F2F2;
+        --gray: #D9D9D9;
+        --red: #FF0000;
+        --black: #000000;
+        --white: #FFFFFF;
+    }
+}
+
+@layer init {
+    html {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+    }
+    .main {
+        min-height: 100vh;
+        background-color: var(--gray);
+    }
+    .hidden {
+        font-size: 0;
+    }
+    .ytv p {
+        margin: 0;
+    }
+    .ytv a {
+        text-decoration: none;
+        color: inherit;
+    }
+    .ytv {
+        margin: 0;
+        max-width: 860px;
+    }
+    .img--responsive {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .img--539to360 {
+        aspect-ratio: 539 / 360;
+    }
+    .img--16to9 {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+@layer design {
+    .ytv a:hover {
+        text-decoration: none;
+        color: inherit;
+        background-color: var(--gray);
+    }
+    .btn {
+        display: inline-block;
+        background-color: var(--silver);
+        border-radius: 2em;
+        font-size: .9em;
+        font-weight: 600;
+        padding: .75em 1em;
+    }
+    .btn--subscribed {
+        background-color: var(--red);
+        color: var(--white);
+    }
+    .ytv {
+        background-color: var(--white);
+        padding: 1em;
+    }
+    .ytv__title {
+        font-size: 1.25em;
+        font-weight: 700;
+        margin-bottom: .85em;
+    }
+    .ytv__title a:hover {
+        background-color: transparent;
+        text-decoration: underline;
+    }
+    .profile__img {
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .profile__stats {
+        opacity: .5;
+        font-size: .75em;
+    }
+
+    .profile__nick--official {
+        position: relative;
+    }
+    .profile__nick--official::after {
+        content: "";
+        /* position: absolute; */
+        margin: .125em .25em;
+        display: inline-block;
+        width: .5em;
+        height: .5em;
+        padding: .125em;
+        border-radius: 50%;
+        background: url(../imgs/chck.svg) content-box padding-box center / contain no-repeat var(--red);
+    }
+    .icon::before {
+        content: "";
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        padding: .125em;
+        margin-right: .5em;
+        vertical-align: text-bottom;
+        background: content-box padding-box center / contain no-repeat;
+    }
+    .icon--right::before {
+        margin-right: 0;
+        margin-left: .5em;
+        padding-left: .5em;
+        border-left: 2px solid var(--gray);
+    }
+    .icon--bell::before {
+        background-image: url(../imgs/bell.svg);
+    }
+    .icon--bell-red::before {
+        background-image: url(../imgs/bell-red.svg);
+    }
+    .icon--like::before {
+        background-image: url(../imgs/thup.svg);
+    }
+    .icon--dislike::before {
+        background-image: url(../imgs/thdwn.svg);
+    }
+    .icon--share::before {
+        background-image: url(../imgs/share.svg);
+    }
+    .icon--download::before {
+        background-image: url(../imgs/down.svg);
+    }
+    .ytv__bell {
+        border-radius: 50%;
+    }
+    .ytv__bell::before {
+        margin-right: 0;
+    }
+    .btn a:hover {
+        background-color: transparent;
+    }
+    .btn a.icon--like:hover::before {
+        background-image: url(../imgs/thupw.svg);
+    }
+    .btn a.icon--dislike:hover::before {
+        background-image: url(../imgs/thdwnw.svg);
+    }
+}
+
