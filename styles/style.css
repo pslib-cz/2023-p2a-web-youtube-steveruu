@@ -41,12 +41,11 @@
 .profile {
    display: flex;
    flex-direction: row;
-
+    gap: 0.5em;
 }
 .profile__text {
     align-content: space-between;
     justify-content: center;
-    gap: 1em;
 }
 .icon {
 
